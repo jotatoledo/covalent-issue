@@ -1,0 +1,80 @@
+<mat-toolbar class="dense-toolbar" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #asyncWithFlex flex class="pad-left">
+      <ng-container *ngFor="let crumb of breadcrumbs$ | async; last as isLast">
+        <a *ngIf="!isLast" td-breadcrumb [routerLink]="crumb.link">
+          {{ crumb.display }}
+        </a>
+        <td-breadcrumb *ngIf="isLast">
+          {{ crumb.display }}
+        </td-breadcrumb>
+      </ng-container>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [asyncWithFlex] Display: {{ asyncWithFlex.count }} Hidden: {{ asyncWithFlex.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #asyncNoFlex class="pad-left">
+      <ng-container *ngFor="let crumb of breadcrumbs$ | async; last as isLast">
+        <a *ngIf="!isLast" td-breadcrumb [routerLink]="crumb.link">
+          {{ crumb.display }}
+        </a>
+        <td-breadcrumb *ngIf="isLast">
+          {{ crumb.display }}
+        </td-breadcrumb>
+      </ng-container>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [asyncNoFlex] Display: {{ asyncNoFlex.count }} Hidden: {{ asyncNoFlex.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs flex #syncWithFlex class="pad-left">
+      <ng-container *ngFor="let crumb of syncCrumbs; last as isLast">
+        <a *ngIf="!isLast" td-breadcrumb [routerLink]="crumb.link">
+          {{ crumb.display }}
+        </a>
+        <td-breadcrumb *ngIf="isLast">
+          {{ crumb.display }}
+        </td-breadcrumb>
+      </ng-container>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [syncWithFlex] Display: {{ syncWithFlex.count }} Hidden: {{ syncWithFlex.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #syncNoFlex class="pad-left">
+      <ng-container *ngFor="let crumb of syncCrumbs; last as isLast">
+        <a *ngIf="!isLast" td-breadcrumb [routerLink]="crumb.link">
+          {{ crumb.display }}
+        </a>
+        <td-breadcrumb *ngIf="isLast">
+          {{ crumb.display }}
+        </td-breadcrumb>
+      </ng-container>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [syncNoFlex] Display: {{ syncNoFlex.count }} Hidden: {{ syncNoFlex.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
