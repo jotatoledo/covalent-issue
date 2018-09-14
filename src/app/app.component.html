@@ -1,11 +1,11 @@
-<h1>Breadcrumbs are rendered without structural directives from an array</h1>
+<h1>Breadcrumbs are rendered without structural directives from static markup</h1>
 <mat-toolbar class="dense-toolbar push-top" color="primary">
   <mat-toolbar-row>
     <td-breadcrumbs #controlNoPad>
-      <a td-breadcrumb [routerLink]="'/'">Home</a>
-      <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
-      <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
-      <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+      <a td-breadcrumb routerLink="/">Home</a>
+      <a td-breadcrumb routerLink="/layouts">Layouts</a>
+      <a td-breadcrumb routerLink="/layouts2">Layouts2</a>
+      <a td-breadcrumb routerLink="/layouts3">Layouts3</a>
       <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
     </td-breadcrumbs>
   </mat-toolbar-row>
@@ -19,10 +19,10 @@
 <mat-toolbar class="dense-toolbar push-top" color="primary">
   <mat-toolbar-row>
     <td-breadcrumbs #controlWithPad class="pad-left">
-      <a td-breadcrumb [routerLink]="'/'">Home</a>
-      <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
-      <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
-      <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+      <a td-breadcrumb routerLink="/">Home</a>
+      <a td-breadcrumb routerLink="/layouts">Layouts</a>
+      <a td-breadcrumb routerLink="/layouts2">Layouts2</a>
+      <a td-breadcrumb routerLink="/layouts3">Layouts3</a>
       <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
     </td-breadcrumbs>
   </mat-toolbar-row>
