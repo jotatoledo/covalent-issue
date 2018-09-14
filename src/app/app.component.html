@@ -1,4 +1,40 @@
-<mat-toolbar class="dense-toolbar" color="primary">
+<h1>Breadcrumbs are rendered without structural directives from an array</h1>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #controlNoPad>
+      <a td-breadcrumb [routerLink]="'/'">Home</a>
+      <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+      <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+      <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+      <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [controlNoPad] Display: {{ controlNoPad.count }} Hidden: {{ controlNoPad.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
+  <mat-toolbar-row>
+    <td-breadcrumbs #controlWithPad class="pad-left">
+      <a td-breadcrumb [routerLink]="'/'">Home</a>
+      <a td-breadcrumb [routerLink]="'/layouts'">Layouts</a>
+      <a td-breadcrumb [routerLink]="'/layouts2'">Layouts2</a>
+      <a td-breadcrumb [routerLink]="'/layouts3'">Layouts3</a>
+      <td-breadcrumb class="tc-grey-500">Manage List</td-breadcrumb>
+    </td-breadcrumbs>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    [controlWithPad] Display: {{ controlWithPad.count }} Hidden: {{ controlWithPad.hiddenBreadcrumbs.length }}
+  </mat-toolbar-row>
+</mat-toolbar>
+<h1>Breadcrumbs are rendered with structural directives from an observable</h1>
+<mat-toolbar class="dense-toolbar push-top" color="primary">
   <mat-toolbar-row>
     <td-breadcrumbs #asyncWithFlex flex class="pad-left">
       <ng-container *ngFor="let crumb of breadcrumbs$ | async; last as isLast">
@@ -38,6 +74,7 @@
     [asyncNoFlex] Display: {{ asyncNoFlex.count }} Hidden: {{ asyncNoFlex.hiddenBreadcrumbs.length }}
   </mat-toolbar-row>
 </mat-toolbar>
+<h1>Breadcrumbs are rendered with structural directives from an array</h1>
 <mat-toolbar class="dense-toolbar push-top" color="primary">
   <mat-toolbar-row>
     <td-breadcrumbs flex #syncWithFlex class="pad-left">
